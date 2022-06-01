@@ -7,7 +7,7 @@ let board, turn, winner
 
 
 /*------------------------ Cached Element References ------------------------*/
-const squareEls = document.querySelector(".squares")
+const squareEls = document.querySelectorAll('.squares')
 const messageEl = document.querySelector("#message")
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -23,3 +23,15 @@ function init() {
     winner = null
     render()
 }
+
+
+function render() {
+    let squareIdx
+    squareEls.forEach(function(square, idx) {
+        console.log(square)
+        console.log(idx)
+    })           
+}
+   
+        
+    
