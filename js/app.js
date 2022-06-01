@@ -18,7 +18,7 @@ const messageEl = document.querySelector("#message")
 init()
 
 function init() {
-    board = [null, null, null, null, null, null, null, null, null]
+    board = [1, -1, null, null, null, null, null, null, null]
     turn = 1
     winner = null
     render()
@@ -26,12 +26,18 @@ function init() {
 
 
 function render() {
-    let squareIdx
-    squareEls.forEach(function(square, idx) {
-        console.log(square)
-        console.log(idx)
-    })           
+    let sqIndex
+    board.forEach(function(square, idx) {
+        sqIndex = squareEls[idx]
+        if (square === 1) {
+            sqIndex.textContent = 'X'
+        } else if (square === -1) {
+            sqIndex.textContent = 'O'
+        } 
+    })
+     
 }
+
+       
    
         
-    
