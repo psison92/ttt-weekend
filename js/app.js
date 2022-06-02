@@ -16,11 +16,11 @@ let board, turn, winner
 
 
 /*------------------------ Cached Element References ------------------------*/
-const squareEls = document.querySelectorAll('.squares')
+const squareEls = document.querySelectorAll('.square')
 const messageEl = document.querySelector("#message")
-
+const boardEl = document.querySelector('.board')
 /*----------------------------- Event Listeners -----------------------------*/
-
+boardEl.addEventListener('click', handleClick)
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -53,9 +53,15 @@ function render() {
     } else {
         messageEl.textContent = `Congratulations player ${turn}! You won!`
     }
-     
 }
 
-       
-   
-        
+function handleClick(evt) {
+    const sqIdx = parseInt(evt.target.id)
+    if (board[sqIdx] !== null || winner !== null) {
+        return
+    }
+    board[sqIdx] = turn
+    turn *= -1
+    getWinner()
+    render()
+}
