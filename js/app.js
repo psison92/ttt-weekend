@@ -18,7 +18,7 @@ const messageEl = document.querySelector("#message")
 init()
 
 function init() {
-    board = [1, -1, null, null, null, null, null, null, null]
+    board = [null, null, null, null, null, null, null, null, null]
     turn = 1
     winner = null
     render()
@@ -31,10 +31,19 @@ function render() {
         sqIndex = squareEls[idx]
         if (square === 1) {
             sqIndex.textContent = 'X'
+            //come back to change square color
         } else if (square === -1) {
             sqIndex.textContent = 'O'
+            //come back to change square color
         } 
     })
+    if (winner === null) {
+        messageEl.textContent = `It's ${turn} turn!`
+    } else if (winner === 'T') {
+        messageEl.textContent = `It's a tie!`
+    } else {
+        messageEl.textContent = `Congratulations player ${turn}! You won!`
+    }
      
 }
 
