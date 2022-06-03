@@ -23,3 +23,12 @@ div {
   vertical-align: middle;
 }
 
+.x {
+  background-color: aqua;
+  font-weight: 400;
+}
+
+.o {
+  background-color: palevioletred;
+  font-weight: 400;
+}

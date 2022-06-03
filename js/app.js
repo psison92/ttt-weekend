@@ -40,9 +40,10 @@ function render() {
         sqIndex = squareEls[idx]
         if (square === 1) {
             sqIndex.textContent = 'X'
-            //come back to change square color
+            sqIndex.className = 'x'//come back to change square color
         } else if (square === -1) {
             sqIndex.textContent = 'O'
+            sqIndex.className = 'o'
             //come back to change square color
         } 
     })
