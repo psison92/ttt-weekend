@@ -47,11 +47,12 @@ function render() {
         } 
     })
     if (winner === null) {
-        messageEl.textContent = `It's ${turn} turn!`
+        return (turn === 1 ? messageEl.textContent = `It's X's turn!` : 
+            messageEl.textContent = `It's O's turn!`)
     } else if (winner === 'T') {
         messageEl.textContent = `It's a tie!`
     } else {
-        messageEl.textContent = `Congratulations player ${winner}! You won!`
+        messageEl.textContent = `${winner} wins!`
     }
 }
 
@@ -70,10 +71,13 @@ function getWinner() {
     let total
     winningCombos.forEach(function(combo) {
         total = (board[combo[0]] + board[combo[1]] + board[combo[2]])
-    if (total === 3) {
-        winner = 1
-    } else if (total === -3) {
-        winner = -1
-    }
-    })    
-}   
+        if (total === 3) {
+            winner = 'X'
+        } else if (total === -3) {
+            winner = 'O'
+        } else if (board.includes(null) === false) {
+            winner = 'T'
+        }
+    })
+    return null
+}
