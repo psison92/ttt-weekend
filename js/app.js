@@ -51,7 +51,7 @@ function render() {
     } else if (winner === 'T') {
         messageEl.textContent = `It's a tie!`
     } else {
-        messageEl.textContent = `Congratulations player ${turn}! You won!`
+        messageEl.textContent = `Congratulations player ${winner}! You won!`
     }
 }
 
@@ -65,3 +65,15 @@ function handleClick(evt) {
     getWinner()
     render()
 }
+
+function getWinner() {
+    let total
+    winningCombos.forEach(function(combo) {
+        total = (board[combo[0]] + board[combo[1]] + board[combo[2]])
+    if (total === 3) {
+        winner = 1
+    } else if (total === -3) {
+        winner = -1
+    }
+    })    
+}   
