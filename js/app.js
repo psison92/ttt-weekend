@@ -1,4 +1,5 @@
 /*-------------------------------- Constants --------------------------------*/
+
 const winningCombos = [
     [0, 1, 2],
     [0, 3, 6],
@@ -10,20 +11,24 @@ const winningCombos = [
     [6, 7, 8]
 ]
 
-
 /*---------------------------- Variables (state) ----------------------------*/
+
 let board, turn, winner
 
-
 /*------------------------ Cached Element References ------------------------*/
+
 const squareEls = document.querySelectorAll('.square')
 const messageEl = document.querySelector("#message")
 const boardEl = document.querySelector('.board')
-/*----------------------------- Event Listeners -----------------------------*/
-boardEl.addEventListener('click', handleClick)
+const resetBtnEl = document.querySelector('.reset-btn')
 
+/*----------------------------- Event Listeners -----------------------------*/
+
+boardEl.addEventListener('click', handleClick)
+resetBtnEl.addEventListener('click', init)
 
 /*-------------------------------- Functions --------------------------------*/
+
 init()
 
 function init() {
@@ -31,8 +36,8 @@ function init() {
     turn = 1
     winner = null
     render()
+    
 }
-
 
 function render() {
     let sqIndex
@@ -40,11 +45,10 @@ function render() {
         sqIndex = squareEls[idx]
         if (square === 1) {
             sqIndex.textContent = 'X'
-            sqIndex.className = 'x'//come back to change square color
+            sqIndex.className = 'x'
         } else if (square === -1) {
             sqIndex.textContent = 'O'
             sqIndex.className = 'o'
-            //come back to change square color
         } 
     })
     if (winner === null) {
@@ -66,6 +70,7 @@ function handleClick(evt) {
     turn *= -1
     getWinner()
     render()
+    console.log(board)
 }
 
 function getWinner() {
@@ -78,7 +83,8 @@ function getWinner() {
             winner = 'O'
         } else if (board.includes(null) === false) {
             winner = 'T'
+        } else {
+            return null
         }
     })
-    return null
 }
