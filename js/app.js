@@ -36,7 +36,7 @@ function init() {
     turn = 1
     winner = null
     render()
-    
+    console.log('check init')
 }
 
 function render() {
@@ -49,7 +49,10 @@ function render() {
         } else if (square === -1) {
             sqIndex.textContent = 'O'
             sqIndex.className = 'o'
-        } 
+        } else if (square === null) {
+            sqIndex.textContent = ''
+            sqIndex.className = ''
+        }
     })
     if (winner === null) {
         return (turn === 1 ? messageEl.textContent = `It's X's turn!` : 
@@ -70,7 +73,6 @@ function handleClick(evt) {
     turn *= -1
     getWinner()
     render()
-    console.log(board)
 }
 
 function getWinner() {
