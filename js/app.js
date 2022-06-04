@@ -80,9 +80,11 @@ function getWinner() {
         total = (board[combo[0]] + board[combo[1]] + board[combo[2]])
         if (total === 3) {
             winner = 'X'
-        } else if (total === -3) {
+        }
+        if (total === -3) {
             winner = 'O'
-        } else if (board.includes(null) === false) {
+        } 
+        if (board.includes(null) === false && winner === null) {
             winner = 'T'
         } else {
             return null
