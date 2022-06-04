@@ -26,7 +26,7 @@ const resetBtnEl = document.querySelector('.reset-btn')
 
 boardEl.addEventListener('click', handleClick)
 resetBtnEl.addEventListener('click', init)
-
+    
 /*-------------------------------- Functions --------------------------------*/
 
 init()
@@ -36,7 +36,6 @@ function init() {
     turn = 1
     winner = null
     render()
-    console.log('check init')
 }
 
 function render() {
@@ -51,7 +50,7 @@ function render() {
             sqIndex.className = 'o'
         } else if (square === null) {
             sqIndex.textContent = ''
-            sqIndex.className = ''
+            sqIndex.className = 'square'
         }
     })
     if (winner === null) {
