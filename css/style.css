@@ -23,15 +23,16 @@ body {
   flex-direction: column;
   text-align: center;
 }
+
 h1 {
-  background: linear-gradient(to right, red 30%, yellow, green, #1E90FF, purple, magenta 85%);
+  background: linear-gradient(to bottom, red 16%, yellow 40%, green 48%, #1E90FF 60%, purple 72%, magenta 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 5rem;
 }
 
 h2 {
-  background: linear-gradient(to right, #303030 30%, whitesmoke 75%);
+  background: linear-gradient(to right, #303030 40%, whitesmoke 60%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   justify-content: center;
