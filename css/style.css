@@ -51,7 +51,7 @@ section.board {
 
 div {
   display: grid;
-  border: 2px solid #606060;
+  border: 3px solid #404040;
   border-style: inset;
   background-color: #202020;
   border-radius: 15px;
@@ -65,9 +65,9 @@ div {
 }
 
 div.square:hover {
-  background-color: bisque;
+  background-color:	bisque;
   animation-name: rotate-x;
-  animation-duration: 1.2s;
+  animation-duration: 1s;
 }
 
 .x {
