@@ -51,9 +51,9 @@ section.board {
 
 div {
   display: grid;
-  border: 3px solid #404040;
+  border: 4px solid #404040;
   border-style: inset;
-  background-color: #202020;
+  background-color: #505050;
   border-radius: 15px;
   font-size: 10vmin;
   text-align: center;
@@ -74,12 +74,14 @@ div.square:hover {
   color: 	cyan;
   font-family: 'Orbitron', sans-serif;
   font-size: 4rem;
+  background-color: #202020;
 }
 
 .o {
   color: 	#FF0099;
   font-family: 'Orbitron', sans-serif;
   font-size: 4rem;
+  background-color: #202020;
 }
 
 button {
