@@ -51,9 +51,9 @@ section.board {
 
 div {
   display: grid;
-  border: 3px solid #484848;
+  border: 2px solid #606060;
   border-style: inset;
-  background-color: black;
+  background-color: #202020;
   border-radius: 15px;
   font-size: 10vmin;
   text-align: center;
